@@ -12,7 +12,11 @@
 
   <body>
     <header class="border-bottom border-dark">
-      
+      <div class="mx-auto">
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+        <% end %>
+      </div>
     </header>
     
     <%= yield %>
